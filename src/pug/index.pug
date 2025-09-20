@@ -1,0 +1,28 @@
+doctype html
+html(lang="en")
+head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Document
+    link(rel="stylesheet", href="css/styles.css")
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+body 
+    include components/header
+    main 
+        section.main_section
+            .dark_mask
+                .mask 
+                picture 
+                    img(src="img/main_bg.jpg", alt="")
+            .main_text.flex.column.items-center.flex-center.tac.wrapper
+                h1.animate.fade-up(data-delay="600") Tederic – інноваційні рішення для лиття пластмас під тиском
+                p.animate.fade-up(data-delay="800") Ми пропонуємо комплексні рішення для лиття пластмас: від консультацій та підбору обладнання до введення у експлуатацію та сервісного обслуговування.
+                .button_container.flex.flex-center.wrap_768.gap_20.animate.fade-up(data-delay="1000")
+                    a(href="#").cta.connect_cta.fill_cta Звʼязатися з нами
+                    a(href="#").cta.transparent_cta Продукція 
+    script(src="js/scripts.js")
+            
+
+
