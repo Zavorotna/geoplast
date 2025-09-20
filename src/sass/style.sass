@@ -24,6 +24,7 @@ body
 
 main
     padding-top: 90rem
+    overflow-x: hidden
 
 h1
     font-size: 44rem
@@ -83,9 +84,10 @@ a
 .grid
     display: grid
 
-.col_2
-    +media(768)
-        grid-template-columns: repeat(2, 1fr)
+.col_4
+    grid-template-columns: repeat(2, 1fr)
+    +media(1024)
+        grid-template-columns: repeat(4, 1fr)
     
 .col_3
     grid-template-columns: repeat(2, 1fr)
@@ -99,7 +101,10 @@ a
 
 .fw-600
     font-weight: 600
-
+.pt_100
+    padding-top: 100rem
+.pt_60
+    padding-top: 60rem
 .gap_20
     gap: 20rem
 
@@ -179,3 +184,68 @@ a
     &:hover
         background-color: #ed6b27
         color: #fff
+
+.about_container
+    h3
+        padding: 50rem 0 40rem
+    p
+        padding-bottom: 20rem
+
+.img_about
+    img
+        width: 100%
+        min-height: 200px
+        object-fit: cover
+
+.asortment_list,
+.need_block
+    div
+        +media(768)
+            width: 50%
+    img
+        width: 100%
+        border-radius: 3px
+.asortment_list
+    ul
+        padding-bottom: 10px
+    li
+        position: relative
+        margin-bottom: 20rem
+        padding-left: 20px
+        &::before
+            content: ""
+            position: absolute
+            top: 50%
+            left: 0
+            width: 10px
+            height: 10px
+            border-radius: 50%
+            background: #ED6B27
+            transform: translate(20%, -50%)
+    span
+        display: inline-block
+        padding: 5rem 15rem
+        color: #fff
+        background: #ED6B27
+        border-radius: 3px
+.need_block
+    padding-bottom: 100rem 
+
+.statistic_container
+    padding: 40rem 0
+    font-size: 18rem
+    div
+        > div
+            +media(1024)
+                max-width: 220rem
+    p
+        padding: 20rem 0
+    .counter, .simbol_text
+        color: #FFF
+        font-size: 48rem
+        font-weight: 600
+    sup
+        font-size: 15rem
+
+.border_bottom
+    border-bottom: 3px solid #ED6B27
