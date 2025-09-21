@@ -67,5 +67,31 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     }
 
+    if (document.querySelector(".burger")) {
+        const burger = document.querySelector(".burger"),
+            menu = document.querySelector(".nav"),
+            cancel = document.querySelector(".cancel"),
+            listItem = menu.querySelectorAll("a"),
+            dark = document.querySelector(".dark-bgc")
 
+        burger.addEventListener("click", function () {
+            menu.style.right = "-10px";
+            dark.style.display = "block"
+            dark.style.zIndex = "4"
+        })
+
+        function cancelBurger() {
+            menu.style.right = "-100%";
+            dark.style.zIndex = "6"
+            dark.style.display = "none"
+        }
+        listItem.forEach(item => {
+            item.addEventListener("click", cancelBurger)
+        })
+        cancel.addEventListener("click", function (e) {
+            e.preventDefault()
+            cancelBurger()
+        })
+        dark.addEventListener("click", cancelBurger)
+    }
 })

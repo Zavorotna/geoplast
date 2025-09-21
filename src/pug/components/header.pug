@@ -3,20 +3,33 @@ header.fixed_header.dark_mode
         .logo 
             a(href="index.html")
                 img(src="img/logo.svg", alt="") 
-        nav.navigation 
+        nav.navigation.nav
             ul.navigation_menu
+                li.cancel_li
+                    a.cancel(href="#")
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M1 15L14.7071 1M15 15L1.29291 1" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
                 li
-                    a(href="#") Головна
+                    a(href="index.html") Головна
                 li
-                    a(href="#") Рішення під ключ
+                    a(href="#info") Рішення під ключ
                 li
-                    a(href="#") Термопластавтомати
+                    a(href="#products") Термопластавтомати
                 li
-                    a(href="#") Новини
+                    a(href="#news") Новини
                 li
-                    a(href="#") Контакти
-        .button 
+                    a(href="#contacts") Контакти
+                li.mobile_btn
+                    .button 
+                        a(href="#").cta.connect_cta.transparent_cta Звʼязатися з нами
+        .button.desctop_btn 
             a(href="#").cta.connect_cta.transparent_cta Звʼязатися з нами
+        .burger 
+            span.bord.b1
+            span.bord.b2
+            span.bord.b3
+
         
 
 
