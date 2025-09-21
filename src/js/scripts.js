@@ -96,19 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
      //autoload video after click on document
-    if (document.querySelector('video') && window.innerWidth < 1024) {
-        const videos = document.querySelectorAll('video');
-
-        function playVideo() {
-            videos.forEach(item => {
-                item.style.opacity = "1"
-                item.play().catch(err => console.log("Autoplay blocked:", err))
-            })
-            document.removeEventListener('click', playVideo)
-        }
-        document.addEventListener('click', playVideo)
-
-    } else {
+    if (document.querySelector('video')) {
         const videos = document.querySelectorAll('video')
         setTimeout(() => {
             videos.forEach(item => {
