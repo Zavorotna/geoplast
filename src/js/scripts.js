@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (document.querySelector(".stats")) {
 
         const counters = document.querySelectorAll('.counter'),
-            speed = 200
+            speed = 100
 
         const animateCounters = (entries, observer) => {
             entries.forEach(entry => {
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         if (current < target) {
                             counter.innerText = current + increment > target ? target : current + increment
-                            setTimeout(updateCount, 20)
+                            setTimeout(updateCount, 50)
                         } else {
                             counter.innerText = target
                         }
