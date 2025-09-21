@@ -5,6 +5,7 @@ head
     meta(name="viewport", content="width=device-width, user-scalable=yes, minimum-scale=1.0, maximom-scale=2.0, initial-scale=1.0")
     title Tederic – інноваційні рішення для лиття пластмас під тиском
     link(rel="stylesheet", href="css/styles.css")
+    <link rel="icon" type="image/png" href="img/logo_g.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
@@ -17,6 +18,8 @@ body
                 .mask 
                 picture 
                     img(src="img/main_bg.jpg", alt="")
+                video(autoplay loop muted playsinline)
+                    source(src="video/video.mp4" type="video/mp4")
             .main_text.flex.column.items-center.flex-center.tac.wrapper
                 h1.animate.fade-up(data-delay="600") Tederic – інноваційні рішення для лиття пластмас під тиском
                 p.animate.fade-up(data-delay="800") Ми пропонуємо комплексні рішення для лиття пластмас: від консультацій та підбору обладнання до введення у експлуатацію та сервісного обслуговування.

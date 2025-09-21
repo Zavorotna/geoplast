@@ -6,10 +6,10 @@
     box-sizing: border-box
 
 html
-    font-size: 0.75px
+    font-size: 0.85px
     scroll-behavior: smooth
-    +media(1024)
-        font-size: 0.85px
+    // +media(1024)
+    //     font-size: 0.85px
     +media(1440)
         font-size: 0.95px
     +media(1920)
@@ -130,13 +130,19 @@ a
     left: 0
     width: 100%
     height: 100%
-    img
+    img, video
         width: 100%
         height: 100%
         object-fit: cover
+    video
+        position: absolute
+        top: 0
+        left: 0
+        opacity: 0
 
 .mask
     background: rgba(0, 0, 0, 0.80)
+    z-index: 2
 
 .fixed_header
     position: fixed
@@ -252,6 +258,7 @@ a.cancel
     position: relative
     max-width: 1156rem
     min-height: 90vh 
+    padding: 50rem 0
     color: #fff
     z-index: 2
     h1
