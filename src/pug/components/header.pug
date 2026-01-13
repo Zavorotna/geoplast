@@ -1,3 +1,20 @@
+.popup
+    a(href="#").cancel_popup
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M0.75 16.75L16.75 0.75" stroke="#BDBDBD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16.75 16.75L0.75 0.75" stroke="#BDBDBD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg> 
+    .grid.btn_popup_col 
+        a(href="#" data-target="manager_block").manager.switch_btn.active Менеджер з продажу
+        a(href="#" data-target="form_send_message").send_message.switch_btn Залишити заявку
+    .manager_block#manager_block.switch_block.active
+        h3.page_h3 Зв’яжіться напряму з менеджером
+        p Наш менеджер з продажу готовий відповісти на всі ваші запитання щодо продукції, цін та умов співпраці.
+        .flex.flex-center.items-center.gap_20 
+            a(href="tel:+380672953719") +38 067 295 37 19
+            a(href="tel:+380501712415") +38 050 171 24 15
+    .form_send_message#form_send_message.switch_block
+        form
 header.fixed_header.dark_mode
     .wrapper_header.flex-between.header.items-center
         .logo 
@@ -13,13 +30,15 @@ header.fixed_header.dark_mode
                 li
                     a(href="index.html") Головна
                 li
-                    a(href="#info") Рішення під ключ
+                    a(href="info.html") Рішення під ключ
                 li
-                    a(href="#products") Термопластавтомати
+                    a(href="services.html") Сервіс та гарантія
                 li
-                    a(href="#news") Новини
+                    a(href="catalogue.html") Термопластавтомати
                 li
-                    a(href="#contacts") Контакти
+                    a(href="news.html") Новини
+                li
+                    a(href="contacts.html") Контакти
                 li.mobile_btn
                     .button 
                         a(href="#").cta.connect_cta.transparent_cta Звʼязатися з нами

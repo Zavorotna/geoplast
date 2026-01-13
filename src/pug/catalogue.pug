@@ -1,0 +1,31 @@
+doctype html
+html(lang="en")
+head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, user-scalable=yes, minimum-scale=1.0, maximom-scale=2.0, initial-scale=1.0")
+    title Tederic – інноваційні рішення для лиття пластмас під тиском
+    link(rel="stylesheet", href="css/styles.css")
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+body 
+    .dark-bgc
+    include components/header
+    main.wrapper.catalogue_container
+        section.products_section.wrapper.pt_100#products
+            h1.page_h1.animate.fade-up(data-delay="100") Термопластавтомати Tederic
+            include components/products
+    footer.dark_mode.footer
+        .wrapper_header.flex-between.header.items-center.wrap_768.gap_20
+            .logo 
+                a(href="index.html")
+                    img(src="img/logo.svg", alt="") 
+            p.copy &copy 2025 Copyright by Gesplast.
+            p.privacy
+                a(href="privacy.html") Політика конфіденційності
+    script(src="js/scripts.js")
+            
+
+

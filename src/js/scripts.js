@@ -67,12 +67,12 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     }
 
+    const dark = document.querySelector(".dark-bgc")
     if (document.querySelector(".burger")) {
         const burger = document.querySelector(".burger"),
             menu = document.querySelector(".nav"),
             cancel = document.querySelector(".cancel"),
-            listItem = menu.querySelectorAll("a"),
-            dark = document.querySelector(".dark-bgc")
+            listItem = menu.querySelectorAll("a")
 
         burger.addEventListener("click", function () {
             menu.style.right = "-10px";
@@ -105,5 +105,72 @@ document.addEventListener("DOMContentLoaded", function () {
             })
         }, 1000)
     }
+
+    //popup
+    const buttons = document.querySelectorAll('.switch_btn'),
+        blocks = document.querySelectorAll('.switch_block'),
+        connectCta = document.querySelectorAll(".connect_cta"),
+        popupConnect = document.querySelector('.popup'),
+        cancelPopup = document.querySelector(".cancel_popup")
+
+    connectCta.forEach(cta => {
+        cta.addEventListener("click", () => {
+            popupConnect.style.display = "block"
+            dark.style.display = "block"
+        })
+    })
+    cancelPopup.addEventListener("click", () => {
+        popupConnect.style.display = "none"
+        dark.style.display = "none"
+    })
+    dark.addEventListener("click", () => {
+        popupConnect.style.display = "none"
+        dark.style.display = "none"
+    })
+
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            buttons.forEach(b => b.classList.remove('active'))
+            btn.classList.add('active')
+
+            blocks.forEach(block => block.classList.remove('active'))
+
+            const target = btn.dataset.target
+            document.getElementById(target).classList.add('active')
+        })
+    })
+
+    //get more news
+    if(document.querySelector('#show-more-btn')) {
+        let newsPerPage = 6,
+            currentIndex = 0
+    
+        const allNews = Array.from(document.querySelectorAll('.news_cards figure.page_news'))
+    
+        allNews.forEach((news, index) => {
+            if (index >= newsPerPage) news.style.display = 'none'
+        })
+        currentIndex = newsPerPage
+    
+        function showMoreNews() {
+            const nextNews = allNews.slice(currentIndex, currentIndex + newsPerPage)
+            
+            nextNews.forEach(news => {
+                news.style.display = 'block'
+            })
+    
+            currentIndex += newsPerPage
+    
+            if (currentIndex >= allNews.length) {
+                document.querySelector('#show-more-btn').style.display = 'none'
+            }
+        }
+    
+        document.querySelector('#show-more-btn').addEventListener('click', function(e){
+            e.preventDefault()
+            showMoreNews()
+        })
+    }
+
 
 })

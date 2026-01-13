@@ -8,8 +8,6 @@
 html
     font-size: 0.85px
     scroll-behavior: smooth
-    // +media(1024)
-    //     font-size: 0.85px
     +media(1440)
         font-size: 0.95px
     +media(1920)
@@ -50,7 +48,8 @@ ul
 a
     transition: .5s
     text-decoration: none
-
+b
+    font-weight: 500
 .wrapper_header,
 .wrapper
     width: 90%
@@ -114,6 +113,14 @@ a
 .gap_20
     gap: 20rem
 
+.gap_30
+    gap: 20rem
+    +media(768)
+        gap: 30rem
+.gap_100
+    gap: 50rem
+    +media(1024)
+        gap: 100rem
 .dark_mode
     color: #fff
     background: #0F283D
@@ -124,7 +131,8 @@ a
     position: relative
 
 .dark_mask,
-.mask
+.mask,
+.mask_news
     position: absolute
     top: 0
     left: 0
@@ -185,8 +193,12 @@ a
     +media(1200)
         display: flex
         justify-content: space-between
-        gap: 50rem
-
+        align-items: center
+        gap: 30rem
+        text-align: center
+.cancel_li
+    +media(1200)
+        display: none
 .dark-bgc
     display: none
     position: fixed
@@ -359,15 +371,12 @@ a.cancel
 
 .fill_cta
     color: #fff
+    &:hover
+        background: #D65511
 
 .dark_text
     color: #121212
 
-.products_section,
-.news
-    .cta
-        &:hover
-            color: #121212
 
 .product
     padding: 30rem
@@ -516,3 +525,278 @@ a.cancel
         text-decoration: underline
         &:hover
             color: #ED6B27
+
+
+//page
+
+.info_page 
+    padding-bottom: 100rem
+    .transparent_cta
+        color: #121212
+        &:hover
+            color: #fff
+        
+.main_container
+    padding: 50rem 0
+    background:#F6F6F6
+    picture
+        display: inline-block
+        height: 100%
+    img
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+.page_h1
+    color:#ED6B27
+    font-size: 34rem
+    font-weight: 500
+    +media(768)
+        font-size: 64rem
+
+.page_h2
+    padding-bottom: 40rem
+    color: #0F283D
+    font-size: 28rem
+    font-weight: 500
+    +media(768)
+        font-size: 48rem
+
+.advantages_container
+    padding: 100rem 0
+
+.col_4
+    grid-template-columns: repeat(2, 1fr)
+    +media(768)
+        grid-template-columns: repeat(4, 1fr)
+
+.advant_block
+    padding: 60rem 26rem 46rem
+    border-radius: 5px
+    background:#E4E2E2
+    text-align: center
+    svg
+        padding-bottom: 20rem
+    p
+        padding-top: 20rem
+        border-top: 3px solid #ED6B27
+        font-size: 18rem
+        font-weight: 400
+.page_h3
+    color: #ED6B27
+    font-size: 22rem
+    font-weight: 500
+    +media(768)
+        font-size: 32rem
+
+.text_info_container
+    > p
+        padding-bottom: 60rem
+
+.text_block
+    padding-bottom: 70rem
+    .grid
+        gap: 50rem
+        +media(1440)
+            gap: 150rem 
+    h3
+        max-width: 570rem
+        padding-bottom: 20rem
+    p
+        padding-bottom: 20rem
+        font-weight: 400
+    
+.img_info
+    height: 100%
+    border-radius: 3px
+    border: 1px solid #E4E2E2
+    overflow: hidden
+    img
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+.popup
+    display: none
+    position: fixed
+    top: 50%
+    left: 50%
+    width: 90vw  
+    max-width: 650px
+    padding: 50rem 60rem
+    transform: translate(-50%, -50%)
+    background-color: #fff
+    border-radius: 3px
+    z-index: 7
+
+.cancel_popup
+    position: absolute
+    top: 20rem
+    right: 20rem
+
+.btn_popup_col
+    grid-template-columns: repeat(2, 1fr)
+    border-radius: 10px
+    border: 1px solid #0F283D
+    overflow: hidden
+    a 
+        padding: 15px 20px
+        color: #BDBDBD
+        text-align: center
+        font-size: 16rem
+        font-weight: 500
+    .active
+        color: #FFF
+        background: #0F283D
+
+.switch_block
+    display: none
+
+.switch_block.active
+    display: block
+
+.manager_block
+    text-align: center
+    h3
+        padding-top: 50rem
+    p
+        padding: 40rem 0
+        font-size: 18rem
+        font-weight: 400
+    a   
+        color: #000
+        font-size: 26rem
+        font-weight: 500
+
+.services_main_text
+    padding: 50rem 0
+    h1
+        padding-bottom: 58rem
+    p
+        margin-bottom: 15rem
+
+.adv_services
+    >div
+        padding: 38rem
+        text-align: left
+    h3
+        padding-bottom: 30rem
+        color: #ED6B27
+        font-size: 24rem
+        font-weight: 600
+    p
+        font-size: 16rem
+        padding: 0 0 15rem 0
+        border: none
+
+.text_services_block
+    .grid
+        gap: 20rem
+        padding-bottom: 40rem
+        +media(1024)
+            gap: 70rem
+            padding-bottom: 60rem
+        +media(768)
+            grid-template-columns: 1fr 2fr
+
+.catalogue_container,
+.news_container
+    h1
+        padding: 60rem 0 40rem
+    section
+        padding: 0 0 100rem
+
+.page_news
+    figcaption
+        position: relative
+    img
+        width: 100%
+        object-fit: cover
+    p
+        padding: 10rem 0
+        color: #BDBDBD
+        font-size: 16rem
+        font-weight: 400
+    h2
+        padding: 0
+        color: #121212
+        font-size: 24rem
+        font-weight: 600
+
+.news_cards
+    div
+        &:first-child
+            padding-bottom: 50rem
+            
+main.new_one_container,
+main.contacts_container,
+main.privacy
+    max-width: 924rem
+    padding: 140rem 0 80rem
+
+main.new_one_container
+    > p
+        color: #BDBDBD
+        font-size: 16rem
+    h1
+        padding: 10rem 0 20rem
+        color: #0F283D
+        font-size: 48rem
+        font-weight: 500
+    picture
+        display: inline-block
+        width: 100%
+        padding-bottom: 20rem
+    img
+        width: 100%
+        object-fit: cover
+        object-position: top
+        max-height: 500rem
+
+.description_news
+    div
+        padding-bottom: 10rem
+    p
+        padding-bottom: 20rem
+    ul
+        li
+            position: relative
+            padding: 0 0 15rem 40rem
+            &::after
+                content: ""
+                position: absolute
+                top: 8px
+                left: 20rem
+                width: 6px
+                height: 6px
+                border-radius: 50%
+                background: #000
+
+
+.news_orange
+    color: #ED6B27
+
+.contacts_container
+    h1
+        padding-bottom: 30rem
+    h3
+        padding-bottom: 20rem
+        color:#0F283D
+        font-weight: 500
+    a 
+        color: #121212
+    address
+        font-style: normal
+    .map
+        width: 100%
+        min-height: 500rem
+.contacts_page
+    .col_2
+        padding-bottom: 30rem
+        +media(768)
+            grid-template-columns: 1.5fr 1fr
+.privacy
+    h1
+        padding-bottom: 40rem
+    li
+        padding-bottom: 15rem

@@ -26,7 +26,7 @@ body
                 p.animate.fade-up(data-delay="800") Ми пропонуємо комплексні рішення для лиття пластмас: від консультацій та підбору обладнання до введення у експлуатацію та сервісного обслуговування.
                 .button_container.flex.flex-center.wrap_768.gap_20.animate.fade-up(data-delay="1000")
                     a(href="#").cta.connect_cta.fill_cta Звʼязатися з нами
-                    a(href="#").cta.transparent_cta Продукція 
+                    a(href="catalogue.html").cta.transparent_cta Термопластавтомати 
         section.wrapper.about_container
             .about_gesplast.pt_100
                 h2.animate.fade-up(data-delay="100") Про компанію «Геспласт Груп»
@@ -95,7 +95,12 @@ body
                         | м
                         sup 2
                     p виробничої площі компанії
-        include components/products
+        section.products_section.wrapper.pt_100#products
+            h2.animate.fade-up(data-delay="100") Термопластавтомати Tederic
+            include components/products
+            .button_container.flex.flex-center.wrap_768.gap_20.pt_60
+                a(href="#").cta.connect_cta.fill_cta Звʼязатися з нами
+                a(href="catalogue.html").cta.transparent_cta.dark_text Термопластавтомати
         include components/news
         section.wrapper.info_container.pt_100#info
             .flex-between.wrap_768
