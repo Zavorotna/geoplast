@@ -390,18 +390,25 @@ document.addEventListener("DOMContentLoaded", function () {
         function onTouchMove(e) {
             if (!isDragging) return
             currentX = e.touches ? e.touches[0].clientX : e.clientX
+            e.preventDefault()
         }
 
         function onTouchEnd() {
             if (!isDragging) return
-            isDragging = false
             const delta = currentX - startX
+            isDragging = false
+            startX = 0
+            currentX = 0
             sliderContainer.style.transition = 'transform 0.3s ease'
+
             if (Math.abs(delta) > swipeThreshold) {
-                delta < 0
-                    ? currentIndex < totalSlides - 1 && currentIndex++
-                    : currentIndex > 0 && currentIndex--
+                if (delta < 0) {
+                    currentIndex = Math.min(currentIndex + 1, totalSlides - 1)
+                } else {
+                    currentIndex = Math.max(currentIndex - 1, 0)
+                }
             }
+
             updateSlider()
         }
 
