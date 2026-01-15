@@ -1,33 +1,33 @@
 document.addEventListener("DOMContentLoaded", function () {
     //animation to section
     if(document.querySelector(".animate")) {
-        const animBlocks = document.querySelectorAll('.animate');
+        const animBlocks = document.querySelectorAll('.animate')
     
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    const delay = entry.target.dataset.delay || 0;
+                    const delay = entry.target.dataset.delay || 0
                     setTimeout(() => {
-                        entry.target.classList.add('show');
-                    }, delay);
-                    observer.unobserve(entry.target);
+                        entry.target.classList.add('show')
+                    }, delay)
+                    observer.unobserve(entry.target)
                 }
-            });
+            })
         }, {
             threshold: 0.5
-        });
+        })
     
     
         animBlocks.forEach(block => {
             if (block.getBoundingClientRect().top < window.innerHeight) {
-                const delay = block.dataset.delay || 0;
+                const delay = block.dataset.delay || 0
                 setTimeout(() => {
-                    block.classList.add('show');
-                }, delay);
+                    block.classList.add('show')
+                }, delay)
             } else {
-                observer.observe(block);
+                observer.observe(block)
             }
-        });
+        })
     }
 
     if (document.querySelector(".stats")) {
@@ -75,13 +75,13 @@ document.addEventListener("DOMContentLoaded", function () {
             listItem = menu.querySelectorAll("a")
 
         burger.addEventListener("click", function () {
-            menu.style.right = "-10px";
+            menu.style.right = "-10px"
             dark.style.display = "block"
             dark.style.zIndex = "4"
         })
 
         function cancelBurger() {
-            menu.style.right = "-100%";
+            menu.style.right = "-100%"
             dark.style.zIndex = "6"
             dark.style.display = "none"
         }
@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
         setTimeout(() => {
             videos.forEach(item => {
                 item.style.opacity = "1"
-                item.play().catch(err => console.log("Autoplay blocked:", err));
+                item.play().catch(err => console.log("Autoplay blocked:", err))
             })
         }, 1000)
     }
@@ -172,5 +172,256 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     }
 
+    //перевірка відправки форми для телефону і імені
+    const phoneInput = document.querySelectorAll('.phoneInput'),
+        errorTel = document.querySelectorAll('.error-tel')
+    phoneInput.forEach(item => {
+        item.addEventListener('input', function () {
+            let phoneNumber = item.value.trim()
+            const mask = "+380"
+        
+            if (!phoneNumber.startsWith(mask)) {
+                phoneNumber = mask + phoneNumber
+            }
+        
+            let cleanedValue = phoneNumber.replace(/[^\d+]/g, "")
+        
+            if (cleanedValue.length > 13) {
+                cleanedValue = cleanedValue.slice(0, 13)
+            }
+        
+            const validInput = isValidPhoneNumber(cleanedValue)
+        
+            if (validInput && cleanedValue.length === 13) {
+                item.style.borderColor = 'green'
+                item.style.color = '#121212'
+
+                errorTel.forEach(item => { 
+                    item.innerText = ""
+                })
+            } else {
+                item.style.borderColor = '#B80101'
+                item.style.color = '#B80101'
+                errorTel.forEach(item => { 
+                    item.innerText = "Введіть коректний номер телефону"
+                })
+            }
+        })
+    })
+
+    function validateForm(form) {
+        const phoneInput = form.querySelector("input[name='userPhone']"),
+            phoneNumber = phoneInput.value.trim()
+
+        if (!phoneNumber || !isValidPhoneNumber(phoneNumber) || phoneNumber.length < 13) {
+            errorTel.forEach(item => { 
+                item.innerText =  "невірний формат"
+            })
+            return false
+        }
+        
+        const inputFields = form.querySelectorAll("input[name='userName']")
+        for (const inputField of inputFields) {
+            const userInput = inputField.value.trim()
+            if (userInput.length < 3) {
+                return false
+            }
+            if (userInput.length > 30){
+                return false
+            }
+        }
+        return true
+    }
+
+    document.querySelectorAll("form[action='sendorder.php'], form[action='senddata.php'], form[action='sendcontact.php']").forEach(form => {
+        form.addEventListener("submit", (e) => {
+            if (!validateForm(form)) {
+                e.preventDefault()
+                console.log("+")
+            }
+        })
+    })
+
+
+    function isValidPhoneNumber(phoneNumber) {
+        return /^\+?(\d{2})?([(]?\d{3}[)]?)\s?[-]?\s?(?:\d{3})\s?[-]?(?:\s?\d{2})\s?[-]?(?:\s?\d{2})$/.test(phoneNumber)
+    }
+
+    const inputMasks = document.querySelectorAll(".inputMask")
+
+    inputMasks.forEach(function (inputMask) {
+        inputMask.addEventListener("click", function () {
+            if (!inputMask.value) {
+                inputMask.value = "+380"
+            }
+        })
+
+        inputMask.addEventListener("input", function () {
+            let inputValue = inputMask.value
+            let cleanedValue = inputValue.replace(/[^\d+]/g, "")
+
+            inputMask.value = cleanedValue
+
+            if (cleanedValue.length > 13) {
+                inputMask.value = cleanedValue.slice(0, 13)
+            }
+
+            if (!cleanedValue.startsWith("+380")) {
+                inputMask.value = "+380" + cleanedValue.slice(3)
+            }
+        })
+    })
+
+    // випадаючі блоки з інформацією
+    function toggleVisibility(buttons, visibleClass, activeClass) {
+        buttons.forEach((item) => {
+            item.addEventListener("click", function (e) {
+                e.preventDefault()
+                const descriptionMore = item.nextElementSibling
+                descriptionMore.classList.toggle(visibleClass)
+                item.classList.toggle(activeClass)
+            })
+        })
+    }
+
+    const btnReadMore = document.querySelectorAll(".readmore")
+
+    toggleVisibility(btnReadMore, "visible", "readmore-active")
+
+    if (document.querySelector(".slider_block_main .slider")) {
+        const sliderContainer = document.querySelector(".slide_group"),
+            slides = document.querySelectorAll(".slide_main"),
+            pag = document.querySelector(".slide_buttons"),
+            next = document.querySelector(".next"),
+            prev = document.querySelector(".prev"),
+            parentSliderContainer = document.querySelector(".slider_container")
+        
+        let currentIndex = 0
+        const totalSlides = slides.length
+
+        if (slides.length <= 1) {
+            next.style.display = "none"
+            prev.style.display = "none"
+        } else {
+            next.style.display = "block"
+            prev.style.display = "block"
+        }
+
+        function setContainerHeight() {
+            const activeSlide = slides[currentIndex],
+                img = activeSlide.querySelector('img')
+            if (!img) return
+
+            const containerWidth = parentSliderContainer.offsetWidth
+            img.complete ? applyHeight(img) : img.addEventListener('load', () => applyHeight(img))
+
+            function applyHeight(image) {
+                const ratio = image.naturalWidth / image.naturalHeight
+            }
+        }
+
+        function createPagination() {
+            pag.innerHTML = ''
+            slides.forEach((_, index) => {
+                const button = document.createElement('button')
+                button.classList.add('slide_button')
+                if (index === currentIndex) button.classList.add('active')
+                button.addEventListener('click', () => {
+                    currentIndex = index
+                    updateSlider()
+                })
+                pag.appendChild(button)
+            })
+            pag.style.display = slides.length > 1 ? "flex" : "none"
+        }
+
+        function updateSlider() {
+            sliderContainer.style.transform = `translateX(-${parentSliderContainer.offsetWidth * currentIndex}px)`
+
+            pag.querySelectorAll('.slide_button').forEach((btn, i) => {
+                btn.classList.toggle('active', i === currentIndex)
+            })
+
+            setContainerHeight()
+
+            if (currentIndex === 0) {
+                prev.classList.add('disabled')
+                prev.disabled = true 
+            } else {
+                prev.classList.remove('disabled')
+                prev.disabled = false
+            }
+
+            if (currentIndex === totalSlides - 1) {
+                next.classList.add('disabled')
+                next.disabled = true
+            } else {
+                next.classList.remove('disabled')
+                next.disabled = false
+            }
+        }
+
+        next.addEventListener("click", e => {
+            e.preventDefault()
+            if (currentIndex < totalSlides - 1) {
+                currentIndex++
+                updateSlider()
+            }
+        })
+
+        prev.addEventListener("click", e => {
+            e.preventDefault()
+            if (currentIndex > 0) {
+                currentIndex--
+                updateSlider()
+            }
+        })
+
+        let startX = 0, currentX = 0, isDragging = false
+        const swipeThreshold = 50
+
+        function onTouchStart(e) {
+            isDragging = true
+            startX = e.touches ? e.touches[0].clientX : e.clientX
+            currentX = startX
+            sliderContainer.style.transition = 'none'
+        }
+
+        function onTouchMove(e) {
+            if (!isDragging) return
+            currentX = e.touches ? e.touches[0].clientX : e.clientX
+        }
+
+        function onTouchEnd() {
+            if (!isDragging) return
+            isDragging = false
+            const delta = currentX - startX
+            sliderContainer.style.transition = 'transform 0.3s ease'
+            if (Math.abs(delta) > swipeThreshold) {
+                delta < 0
+                    ? currentIndex < totalSlides - 1 && currentIndex++
+                    : currentIndex > 0 && currentIndex--
+            }
+            updateSlider()
+        }
+
+        sliderContainer.addEventListener('touchstart', onTouchStart, { passive: true })
+        sliderContainer.addEventListener('touchmove', onTouchMove, { passive: true })
+        sliderContainer.addEventListener('touchend', onTouchEnd)
+
+        sliderContainer.addEventListener('pointerdown', onTouchStart)
+        sliderContainer.addEventListener('pointermove', onTouchMove)
+        sliderContainer.addEventListener('pointerup', onTouchEnd)
+        sliderContainer.addEventListener('pointerleave', onTouchEnd)
+
+        let resizeTimeout
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout)
+            resizeTimeout = setTimeout(() => updateSlider(), 250)
+        })
+
+        createPagination()
+        updateSlider()
+    }
 
 })

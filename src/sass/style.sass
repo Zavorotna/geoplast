@@ -111,7 +111,9 @@ b
     gap: 10rem    
 
 .gap_20
-    gap: 20rem
+    gap: 10px
+    +media(768)
+        gap: 20rem
 
 .gap_30
     gap: 20rem
@@ -377,15 +379,17 @@ a.cancel
 .dark_text
     color: #121212
 
+.products_section
+    figcaption
+        position: relative
 
 .product
     padding: 30rem
     border-radius: 3px
+    transition: .5s
     background: #E4E2E2
     +media(1024)
         padding: 70rem 40rem 30rem
-    figcaption
-        position: relative
     img
         width: 100%
         height: 212rem
@@ -407,9 +411,11 @@ a.cancel
     height: 100%
     z-index: 1
     &:hover
-        ~ picture
-            img
-                transform: scale(1.05)
+        ~ .product
+            background: #BDBDBD
+            picture
+                img
+                    transform: scale(1.05)
 
 .model
     padding: 5rem 15rem
@@ -495,6 +501,23 @@ a.cancel
         &:hover
             svg
                 transform: scale(1.1)
+.inst, .youtube
+    svg  
+        path 
+            fill: #ED6B27
+        &:hover
+            path 
+                fill: #0F283D
+.tg
+    svg
+        path
+            &:first-child
+                fill: #ED6B27
+        &:hover
+            path 
+                &:first-child
+                    fill: #0F283D
+
 
 .map
     position: relative
@@ -621,13 +644,18 @@ a.cancel
     position: fixed
     top: 50%
     left: 50%
-    width: 90vw  
+    width: 90vw
+    max-height: 90vh 
     max-width: 650px
-    padding: 50rem 60rem
+    padding: 50rem 20rem
     transform: translate(-50%, -50%)
     background-color: #fff
     border-radius: 3px
     z-index: 7
+    overflow-y: auto 
+    +media(768)
+        height: auto
+        padding: 50rem 60rem
 
 .cancel_popup
     position: absolute
@@ -658,15 +686,21 @@ a.cancel
 .manager_block
     text-align: center
     h3
-        padding-top: 50rem
+        padding-top: 15rem
+        +media(768)
+            padding-top: 50rem
     p
-        padding: 40rem 0
+        padding: 20rem 0
         font-size: 18rem
         font-weight: 400
+        +media(768)
+            padding: 40rem 0
     a   
         color: #000
-        font-size: 26rem
+        font-size: 20rem
         font-weight: 500
+        +media(768)
+            font-size: 26rem
 
 .services_main_text
     padding: 50rem 0
@@ -800,3 +834,273 @@ main.new_one_container
         padding-bottom: 40rem
     li
         padding-bottom: 15rem
+
+.form_send_message
+    h3
+        padding: 15rem 0
+        +media(768)
+            padding: 50rem 0 40rem
+    form
+        > p
+            padding-top: 20rem
+    label
+        display: block
+        padding-bottom: 5rem
+        span
+            color: #ED6B27
+    input, textarea
+        width: 100%
+        appearance: none
+        padding: 10rem
+        font-family: "Ubuntu Sans"
+        font-size: 18rem
+        border-radius: 3px
+        border: 1px solid #BDBDBD
+        +media(768)
+            padding: 14rem 10rem
+    textarea
+        resize: none
+        min-height: 120rem
+        margin-bottom: 10rem
+        +media(768)
+            margin-bottom: 30rem
+
+.error-tel
+    color: #B80101
+    font-size: 12px
+    font-style: italic
+    font-weight: 500
+
+.product_main_section
+    padding: 50rem 0
+
+.main_product_block
+    p 
+        padding-bottom: 10rem
+        color: #BDBDBD
+
+.description_product
+    position: relative
+    grid-template-columns: 1fr 3fr
+    margin-bottom: 90rem
+    .wrapper
+        min-height: 350rem
+        +media(1024)
+            display: flex
+        
+.text_descr
+    +media(1024)
+        max-width: 545rem
+    .transparent_cta
+        color: #ED6B27
+        border: 2px solid #0F283D
+        &:hover
+            color: #fff
+            border-color: #ED6B27
+.text_product
+    font-weight: 500
+.descr
+    padding: 10rem 15rem
+    border-radius: 3px
+    background: #F6F6F6
+.col_2_product
+    padding-bottom: 30px
+    +media(768)
+        padding-bottom: 70rem
+    p
+        white-space: nowrap
+
+.main_image.fade-right
+    +media(1024)
+        transform: translate(100px, -50%)
+.main_image.fade-right.show
+        +media(1024)
+            transform: translate(0, -50%)
+.main_image
+    padding-bottom: 30rem
+
+    +media(1024)
+        position: absolute
+        right: -15%
+        top: 50%
+        height: 100%
+        padding: 0
+        max-width: 60vw
+    +media(1282)
+        max-width: 100%
+    picture
+        display: inline-block
+        height: 100%
+    img
+        width: 100%
+        height: 100%
+        object-fit: contain
+
+.tiny_text
+    font-weight: 400
+
+.dot_svg
+    svg
+        transform: translateY(-50%)
+        +media(768)
+            transform: translateY(-100%)
+
+.table_container
+    padding: 50rem 0
+    margin-bottom: 30px
+    color: #fff
+    background: #0F283D
+    h2
+        color: #fff
+.table_block
+    overflow-x: scroll 
+    padding-bottom: 10rem
+    +media(1024)
+        overflow: visible
+    &::-webkit-scrollbar
+        height: 5px
+        background: #eee
+    &::-webkit-scrollbar-thumb
+        background: #ED6B27
+    table
+        min-width: 1000rem
+        width: 100%
+        text-align: left
+        border-collapse: collapse
+        th, td
+            padding: 20rem 10rem
+        th
+            font-weight: 600
+            border-bottom: 2px solid #ED6B27
+        td
+            width: 25%
+            border-bottom: 2px solid #E4E2E2
+
+.info_product_container
+    padding: 50rem 0
+    background: #F6F6F6
+
+.info-item
+    border-top: 1px solid #121212
+
+.b_bottom
+    border-bottom: 1px solid #121212
+.readmore
+    position: relative
+    padding: 40rem 0
+    color: #121212
+    svg
+        path 
+            transition: .5s
+    &:hover
+        text-shadow: 0 0 #000
+        svg
+            path 
+                stroke: #000
+    .head_span
+        padding: 0
+        color: #0F283D
+        font-size: 30rem
+        font-weight: 400
+        +media(1440)
+            font-size: 38rem
+        +media(1920)
+            font-size: 48rem
+.active_span
+    display: none
+.readmore-active
+    border-radius: 5px 5px 0 0
+    .active_span
+        display: block
+        color: #ED6B27
+    .head_span
+        font-weight: 600
+    .svg_btn 
+        svg
+            transform: rotate(-180deg)
+.head_info
+    padding-bottom: 5px
+    font-weight: 500
+
+.description-more
+    max-height: 0
+    overflow: hidden
+    img
+        width: 100%
+    .advant_block
+        padding: 26rem 20rem
+        h3
+            padding-bottom: 17rem
+
+.prod_info_text
+    p
+        padding-bottom: 15rem
+.visible
+    padding: 0 0 50rem
+    max-height: 3000rem
+    transition: max-height 1s ease
+    > div
+        padding-bottom: 20rem
+
+.svg_btn
+    svg
+        transform: rotate(0)
+        transition: all .5s ease
+
+.center_block
+    +media(768)
+        max-width: 70%
+        margin: 0 auto
+.slider_section
+    padding: 50rem 0 100rem
+    .wrapper
+        width: 80%
+        +media(1440)
+            max-width: 1200rem  
+.slide_group
+    display: flex
+    justify-content: space-between
+    max-height: 600px
+    transition: transform 0.3s ease
+.product_slider
+    position: relative
+    .next, .prev
+        position: absolute
+        top: 50%
+        width: 25px
+        +media(768)
+            width: 50px
+    .next
+        right: -30px
+        +media(768)
+            right: -60px
+    .prev
+        left: -30px
+        +media(768)
+            left: -60px
+.slider_container 
+    overflow: hidden
+    img
+        width: 100%
+        object-fit: cover
+        object-position: center
+    
+.slide_main 
+    flex: 0 0 100%
+
+.slide_button
+    width: 15rem
+    height: 15rem
+    border-radius: 3px
+    border: 1px solid #0F283D
+    background: #0F283D
+
+.slide_button.active
+    background: #ED6B27
+    border-color: #ED6B27
+
+.next.disabled,
+.prev.disabled 
+    opacity: 0.4
+    pointer-events: none
+

@@ -1,0 +1,158 @@
+doctype html
+html(lang="en")
+head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, user-scalable=yes, minimum-scale=1.0, maximum-scale=2.0, initial-scale=1.0")
+    title Tederic – інноваційні рішення для лиття пластмас під тиском
+    link(rel="stylesheet", href="css/styles.css")
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+body 
+    .dark-bgc
+    include components/header
+    main.product_container_page
+        section.product_main_section
+            .main_product_block.wrapper.animate.fade-up(data-delay="200")
+                p Коліно-важільні термопластавтомати
+                h1.page_h2.dot_svg ТПА з колінно-важільний вузл змикання Tederic NEO 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10rem" height="10rem" viewBox="0 0 10 10" fill="none">
+                        <circle cx="5" cy="5" r="5" fill="#ED6B27"/>
+                    </svg>
+                    |  T
+            .description_product.items-center.gap_100
+                .main_image.animate.fade-right(data-delay="400") 
+                    picture 
+                        img(src="img/prod_1.png", alt="")
+                .wrapper.items-center.animate.fade-left(data-delay="400")
+                    .text_descr
+                        .grid.col_2_product.col_2.items-center.gap_30
+                            p.text_product Зусилля змикання 
+                            p.descr 900 - 10 500 kN
+                            p.text_product Об’єм упорскування
+                            p.descr 168 - 6220 см³
+                            p.text_product Відстань між колонами
+                            p.descr 360×360 - 1160×1160
+                        .button_container.flex.flex-center.wrap_768.gap_20.animate.fade-up(data-delay="300")
+                            a(href="#").cta.connect_cta.fill_cta Дізнатися вартість
+                            a(href="catalogue.html").cta.transparent_cta Скачати брошуру 
+            .wrapper.animate.fade-up(data-delay="500")
+                h2.page_h2.dot_svg Серія ТПА Tederic NEO 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                        <circle cx="5" cy="5" r="5" fill="#ED6B27"/>
+                    </svg>
+                    |  T з колінно-важелевим вузлом змикання: 
+                    span.tiny_text елегантність та продуктивність у кожній деталі.
+        section.table_container.animate.fade-up(data-delay="200") 
+            .wrapper 
+                h2.page_h2 Модельний ряд
+                .table_block
+                    table 
+                        thead 
+                            tr 
+                                th Модель
+                                th Зусилля змикання
+                                th Обʼєм вприскування, см
+                                    sup 3
+                                th Відстань між колонами, мм
+                        tbody 
+                            tr
+                                td NEO·T90
+                                td 900
+                                td 168 - 243
+                                td 360×360
+                            tr
+                                td NEO·T120
+                                td 1200
+                                td 222 - 310
+                                td 410×410
+                            tr
+                                td NEO·T160
+                                td 1600
+                                td 312 - 442
+                                td 470×470
+                            tr
+                                td NEO·T200
+                                td 2000
+                                td 374 - 558
+                                td 530×530
+                            tr
+                                td NEO·T260
+                                td 2600
+                                td 522 - 752
+                                td 610×570
+                            tr
+                                td NEO·T320
+                                td 3200
+                                td 845 - 1 151
+                                td 710×670
+                            tr
+                                td NEO·T400
+                                td 4000
+                                td 1 161 - 1 546
+                                td 760×710
+                            tr
+                                td NEO·T500
+                                td 5000
+                                td 1 785 - 2 293
+                                td 820×820
+                            tr
+                                td NEO·T600
+                                td 6000
+                                td 2242-2837
+                                td 880*880
+                            tr
+                                td NEO·T700
+                                td 7000
+                                td 2684-3715
+                                td 960*960
+                            tr
+                                td NEO·T800
+                                td 8000
+                                td 3276-4894
+                                td 1020*1020
+                            tr
+                                td NEO·T1050
+                                td 10500
+                                td 4320-6220
+                                td 1160*1160
+        section.info_product_container 
+            .wrapper 
+                include components/product_info
+        section.slider_section.animate.fade-up(data-delay="200") 
+            .wrapper 
+                .slider_block_main
+                    .product_slider.slider#mySlider
+                        .slider_container
+                            .slide_group
+                                picture.slide_main
+                                    img(src="img/slider.png", alt="")
+                                picture.slide_main
+                                    img(src="img/slider.png", alt="")
+                                picture.slide_main
+                                    img(src="img/slider.png", alt="")
+                        a.prev(href="#")
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" fill="none">
+                                <circle cx="25" cy="25" r="25" transform="rotate(90 25 25)" fill="#ED6B27"/>
+                                <path d="M29 15L19 25L29 35" stroke="#0F283D" stroke-width="3" stroke-linecap="round"/>
+                            </svg>
+                        a.next(href="")
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" fill="none">
+                                <circle cx="25" cy="25" r="25" transform="matrix(4.37114e-08 1 1 -4.37114e-08 0 2.18557e-06)" fill="#ED6B27"/>
+                                <path d="M21 15L31 25L21 35" stroke="#0F283D" stroke-width="3" stroke-linecap="round"/>
+                            </svg>  
+                        .slide_buttons.flex.flex-center.gap_20
+    footer.dark_mode.footer
+        .wrapper_header.flex-between.header.items-center.wrap_768.gap_20
+            .logo 
+                a(href="index.html")
+                    img(src="img/logo.svg", alt="") 
+            p.copy &copy 2025 Copyright by Gesplast.
+            p.privacy
+                a(href="privacy.html") Політика конфіденційності
+    script(src="js/scripts.js")
+            
+
+

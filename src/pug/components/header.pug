@@ -14,7 +14,29 @@
             a(href="tel:+380672953719") +38 067 295 37 19
             a(href="tel:+380501712415") +38 050 171 24 15
     .form_send_message#form_send_message.switch_block
-        form
+        h3.page_h3.tac Заповніть форму, і наш менеджер зателефонує вам
+        form(action="#")
+            .grid.col_2.gap_20 
+                p
+                    label(for='name') Імʼя
+                        span *
+                    input#name(type='text' name='userName' minlength='3' maxlength='30' required oninput="this.value = this.value.replace(/[^a-zA-Zа-яА-ЯїЇєЄіІґҐs]/g, '')")
+                p
+                    label(for='surname') Прізвище
+                    input#surname(type='text' name='userName' minlength='3' maxlength='30' required oninput="this.value = this.value.replace(/[^a-zA-Zа-яА-ЯїЇєЄіІґҐs]/g, '')")
+                p
+                    label(for="userPhone") Телефон
+                        span *
+                    input.phoneInput.inputMask(type='tel' name='userPhone' required maxlength='13')
+                    span.error-tel
+                p
+                    label(for="email") E-mail
+                    input#email(type='email' name='email' required)
+            p
+                label(for="textarea") Коментар
+                textarea#textarea(name="textarea")
+            .flex.flex-center.items-center.gap_20 
+                button.cta.fill_cta Відправити
 header.fixed_header.dark_mode
     .wrapper_header.flex-between.header.items-center
         .logo 
