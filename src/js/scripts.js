@@ -409,10 +409,10 @@ document.addEventListener("DOMContentLoaded", function () {
         sliderContainer.addEventListener('touchmove', onTouchMove, { passive: true })
         sliderContainer.addEventListener('touchend', onTouchEnd)
 
-        sliderContainer.addEventListener('pointerdown', onTouchStart)
-        sliderContainer.addEventListener('pointermove', onTouchMove)
-        sliderContainer.addEventListener('pointerup', onTouchEnd)
-        sliderContainer.addEventListener('pointerleave', onTouchEnd)
+        // sliderContainer.addEventListener('pointerdown', onTouchStart)
+        // sliderContainer.addEventListener('pointermove', onTouchMove)
+        // sliderContainer.addEventListener('pointerup', onTouchEnd)
+        // sliderContainer.addEventListener('pointerleave', onTouchEnd)
 
         let resizeTimeout
         window.addEventListener('resize', () => {
