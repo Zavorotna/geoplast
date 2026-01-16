@@ -415,6 +415,7 @@ document.addEventListener("DOMContentLoaded", function () {
         sliderContainer.addEventListener('touchstart', onTouchStart, { passive: true })
         sliderContainer.addEventListener('touchmove', onTouchMove, { passive: true })
         sliderContainer.addEventListener('touchend', onTouchEnd)
+        sliderContainer.addEventListener('touchcancel', onTouchEnd)
 
         // sliderContainer.addEventListener('pointerdown', onTouchStart)
         // sliderContainer.addEventListener('pointermove', onTouchMove)
