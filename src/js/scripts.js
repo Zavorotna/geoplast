@@ -379,46 +379,47 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // let currentIndex = 0
         let startX = 0
-        let currentX = 0
-        let isDragging = false
-        const swipeThreshold = 50
+let currentX = 0
+let isDragging = false
+let sliderOffset = 0
+const swipeThreshold = 50
 
-        function onTouchStart(e) {
-            isDragging = true
-            startX = e.touches ? e.touches[0].clientX : e.clientX
-            sliderContainer.style.transition = 'none'
-        }
+function onTouchStart(e) {
+    isDragging = true
+    startX = e.touches ? e.touches[0].clientX : e.clientX
+    sliderOffset = -currentIndex * parentSliderContainer.offsetWidth
+    sliderContainer.style.transition = 'none'
+}
 
-        function onTouchMove(e) {
-            if (!isDragging) return
-            currentX = e.touches ? e.touches[0].clientX : e.clientX
-            const delta = currentX - startX
-            sliderContainer.style.transform = `translateX(${-currentIndex * parentSliderContainer.offsetWidth + delta}px)`
-        }
+function onTouchMove(e) {
+    if (!isDragging) return
+    currentX = e.touches ? e.touches[0].clientX : e.clientX
+    const delta = currentX - startX
+    sliderContainer.style.transform = `translateX(${sliderOffset + delta}px)`
+    e.preventDefault() // блокуємо скрол
+}
 
-        function onTouchEnd() {
-            if (!isDragging) return
-            isDragging = false
-            const delta = currentX - startX
-            sliderContainer.style.transition = 'transform 0.3s ease'
+function onTouchEnd() {
+    if (!isDragging) return
+    isDragging = false
+    const delta = currentX - startX
+    sliderContainer.style.transition = 'transform 0.3s ease'
 
-            if (Math.abs(delta) > swipeThreshold) {
-                if (delta < 0 && currentIndex < totalSlides - 1) currentIndex++
-                if (delta > 0 && currentIndex > 0) currentIndex--
-            }
-            updateSlider() // плавно повертає в позицію currentIndex
-        }
+    if (Math.abs(delta) > swipeThreshold) {
+        if (delta < 0 && currentIndex < totalSlides - 1) currentIndex++
+        if (delta > 0 && currentIndex > 0) currentIndex--
+    }
+    updateSlider()
+    startX = 0
+    currentX = 0
+    sliderOffset = 0
+}
 
-
-        sliderContainer.addEventListener('touchstart', onTouchStart, { passive: true })
-        sliderContainer.addEventListener('touchmove', onTouchMove, { passive: true })
-        sliderContainer.addEventListener('touchend', onTouchEnd)
-        sliderContainer.addEventListener('touchcancel', onTouchEnd)
-
-        // sliderContainer.addEventListener('pointerdown', onTouchStart)
-        // sliderContainer.addEventListener('pointermove', onTouchMove)
-        // sliderContainer.addEventListener('pointerup', onTouchEnd)
-        // sliderContainer.addEventListener('pointerleave', onTouchEnd)
+// Події
+sliderContainer.addEventListener('touchstart', onTouchStart, { passive: true })
+sliderContainer.addEventListener('touchmove', onTouchMove, { passive: false })
+sliderContainer.addEventListener('touchend', onTouchEnd)
+sliderContainer.addEventListener('touchcancel', onTouchEnd)
 
         let resizeTimeout
         window.addEventListener('resize', () => {
