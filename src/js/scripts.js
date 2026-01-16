@@ -377,40 +377,38 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         })
 
-        let startX = 0, currentX = 0, isDragging = false
+        // let currentIndex = 0
+        let startX = 0
+        let currentX = 0
+        let isDragging = false
         const swipeThreshold = 50
 
         function onTouchStart(e) {
             isDragging = true
             startX = e.touches ? e.touches[0].clientX : e.clientX
-            currentX = startX
             sliderContainer.style.transition = 'none'
         }
 
         function onTouchMove(e) {
             if (!isDragging) return
             currentX = e.touches ? e.touches[0].clientX : e.clientX
-            e.preventDefault()
+            const delta = currentX - startX
+            sliderContainer.style.transform = `translateX(${-currentIndex * parentSliderContainer.offsetWidth + delta}px)`
         }
 
         function onTouchEnd() {
             if (!isDragging) return
-            const delta = currentX - startX
             isDragging = false
-            startX = 0
-            currentX = 0
+            const delta = currentX - startX
             sliderContainer.style.transition = 'transform 0.3s ease'
 
             if (Math.abs(delta) > swipeThreshold) {
-                if (delta < 0) {
-                    currentIndex = Math.min(currentIndex + 1, totalSlides - 1)
-                } else {
-                    currentIndex = Math.max(currentIndex - 1, 0)
-                }
+                if (delta < 0 && currentIndex < totalSlides - 1) currentIndex++
+                if (delta > 0 && currentIndex > 0) currentIndex--
             }
-
-            updateSlider()
+            updateSlider() // плавно повертає в позицію currentIndex
         }
+
 
         sliderContainer.addEventListener('touchstart', onTouchStart, { passive: true })
         sliderContainer.addEventListener('touchmove', onTouchMove, { passive: true })
