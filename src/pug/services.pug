@@ -1,80 +1,80 @@
 doctype html
 html(lang="en")
-head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, user-scalable=yes, minimum-scale=1.0, maximom-scale=2.0, initial-scale=1.0")
-    title Tederic – інноваційні рішення для лиття пластмас під тиском
-    link(rel="stylesheet", href="css/styles.css")
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
-body 
-    .dark-bgc
-    include components/header
-    main.info_page
-        section.main_container 
-            .wrapper 
-                .grid.col_2.gap_100.items-center.animate.fade-up(data-delay="500") 
-                    div.services_main_text
-                        h1.page_h1.animate.fade-up(data-delay="500") Сервіс та гарантія
-                        p.animate.fade-up(data-delay="600") Ми забезпечуємо повний комплекс сервісного обслуговування вашого обладнання. 
-                        p.animate.fade-up(data-delay="600") Кожен інженер нашого сервісного департаменту має вищу технічну освіту та великий практичний досвід, а підготовка персоналу включає детальне вивчення обладнання та стажування на заводі-виробнику.
-                    picture 
-                        img(src="img/services_page.jpg", alt="")
-        section.advantages_container.wrapper.animate.fade-up(data-delay="300")
-            h2.page_h2 Переваги нашого сервісу
-            .grid.col_3.gap_30.adv_services
-                .advant_block.animate.fade-left(data-delay="400")
-                    h3 Наявність деталей
-                    p На нашому складі постійно підтримується широкий асортимент необхідних вузлів і комплектуючих, що дає змогу нашим клієнтам зменшити ризик простоїв у виробничому процесі.
-                    p Ви можете бути впевнені в швидкому отриманні потрібних деталей у максимально стислі строки.        
-                .advant_block.animate.fade-up(data-delay="400")
-                    h3 Відповідальність компанії
-                    p Наша компанія успішно працює на ринку впевнено розвиваючись і підтверджуючи свою стабільність та надійність багаторічним досвідом. 
-                    p Ми беремо на себе повну відповідальність за всі надані послуги, дотримуємося взятих зобов’язань і гарантуємо високу якість виконання робіт незалежно від зовнішніх обставин.     
-                .advant_block.animate.fade-up(data-delay="400")
-                    h3 Гарантія якості
-                    p Ми надаємо гарантію терміном один рік на все обладнання, яке постачається нашою компанією.
-                    p Гарантія передбачає повне гарантійне обслуговування протягом одного року з дати продажу обладнання, професійні консультації, а також своєчасну доставку запасних частин і необхідного обладнання у встановлені строки.  
-        section.text_info_container.wrapper 
-            h2.page_h2.animate.fade-up(data-delay="300") Професійна підтримка на кожному етапі
-            p.animate.fade-up(data-delay="300") Наші фахівці завжди готові оперативно та професійно вирішувати будь-які завдання, пов’язані з обладнанням, яке вже введене в експлуатацію.
-            .text_services_block 
-                .grid.items-center
-                    h3.page_h3.animate.fade-up(data-delay="300") Знання та досвід
-                    .description_info.animate.fade-right(data-delay="300") 
-                        p 
-                            b Кожен інженер нашого сервісного департаменту має вищу технічну освіту та значний практичний досвід роботи на промислових підприємствах.
-                        p Система підготовки персоналу передбачає ґрунтовне вивчення обладнання, яке пропонує компанія, а також обов’язкове проходження стажування безпосередньо на заводі-виробнику, що гарантує високий рівень експертизи та професійного сервісу.
-            .text_services_block 
-                .grid.items-center
-                    h3.page_h3.animate.fade-up(data-delay="300") Індивідуальний підхід
-                    .description_info.animate.fade-right(data-delay="300") 
-                        p 
-                            b Наш підхід ґрунтується на індивідуальній роботі з кожним проєктом.
-                        p Ми не використовуємо шаблонних рішень, а підбираємо оптимальні варіанти, які відповідають реальним потребам клієнта, забезпечують стабільну роботу обладнання та довгостроковий результат.
-            .text_services_block 
-                .grid.items-center
-                    h3.page_h3.animate.fade-up(data-delay="300") Виготовлення прес-форм
-                    .description_info.animate.fade-right(data-delay="300") 
-                        p 
-                            b Кожен інженер нашого сервісного департаменту має вищу технічну освіту та значний практичний досвід роботи на промислових підприємствах.
-                        p Система підготовки персоналу передбачає ґрунтовне вивчення обладнання, яке пропонує компанія, а також обов’язкове проходження стажування безпосередньо на заводі-виробнику, що гарантує високий рівень експертизи та професійного сервісу.
-            
-        .button_container.flex.flex-center.wrap_768.gap_20.animate.fade-up(data-delay="500")
-            a(href="#").cta.connect_cta.fill_cta Звʼязатися з нами
-            a(href="catalogue.html").cta.transparent_cta Термопластавтомати 
-    footer.dark_mode.footer
-        .wrapper_header.flex-between.header.items-center.wrap_768.gap_20
-            .logo 
-                a(href="index.html")
-                    img(src="img/logo.svg", alt="") 
-            p.copy &copy 2025 Copyright by Gesplast.
-            p.privacy
-                a(href="privacy.html") Політика конфіденційності
-    script(src="js/scripts.js")
-            
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, user-scalable=yes, minimum-scale=1.0, maximom-scale=2.0, initial-scale=1.0")
+        title Tederic – інноваційні рішення для лиття пластмас під тиском
+        link(rel="stylesheet", href="css/styles.css")
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    body 
+        .dark-bgc
+        include components/header
+        main.info_page
+            section.main_container 
+                .wrapper 
+                    .grid.col_2.gap_100.items-center.animate.fade-up(data-delay="100") 
+                        div.services_main_text
+                            h1.page_h1.animate.fade-up(data-delay="100") Сервіс та гарантія
+                            p.animate.fade-up(data-delay="150") Ми забезпечуємо повний комплекс сервісного обслуговування вашого обладнання. 
+                            p.animate.fade-up(data-delay="150") Кожен інженер нашого сервісного департаменту має вищу технічну освіту та великий практичний досвід, а підготовка персоналу включає детальне вивчення обладнання та стажування на заводі-виробнику.
+                        picture 
+                            img(src="img/services_page.jpg", alt="")
+            section.advantages_container.wrapper.animate.fade-up(data-delay="100")
+                h2.page_h2 Переваги нашого сервісу
+                .grid.col_3.gap_30.adv_services
+                    .advant_block.animate.fade-left(data-delay="150")
+                        h3 Наявність деталей
+                        p На нашому складі постійно підтримується широкий асортимент необхідних вузлів і комплектуючих, що дає змогу нашим клієнтам зменшити ризик простоїв у виробничому процесі.
+                        p Ви можете бути впевнені в швидкому отриманні потрібних деталей у максимально стислі строки.        
+                    .advant_block.animate.fade-up(data-delay="150")
+                        h3 Відповідальність компанії
+                        p Наша компанія успішно працює на ринку впевнено розвиваючись і підтверджуючи свою стабільність та надійність багаторічним досвідом. 
+                        p Ми беремо на себе повну відповідальність за всі надані послуги, дотримуємося взятих зобов’язань і гарантуємо високу якість виконання робіт незалежно від зовнішніх обставин.     
+                    .advant_block.animate.fade-up(data-delay="150")
+                        h3 Гарантія якості
+                        p Ми надаємо гарантію терміном один рік на все обладнання, яке постачається нашою компанією.
+                        p Гарантія передбачає повне гарантійне обслуговування протягом одного року з дати продажу обладнання, професійні консультації, а також своєчасну доставку запасних частин і необхідного обладнання у встановлені строки.  
+            section.text_info_container.wrapper 
+                h2.page_h2.animate.fade-up(data-delay="100") Професійна підтримка на кожному етапі
+                p.animate.fade-up(data-delay="100") Наші фахівці завжди готові оперативно та професійно вирішувати будь-які завдання, пов’язані з обладнанням, яке вже введене в експлуатацію.
+                .text_services_block 
+                    .grid.items-center
+                        h3.page_h3.animate.fade-left(data-delay="100") Знання та досвід
+                        .description_info.animate.fade-right(data-delay="100") 
+                            p 
+                                b Кожен інженер нашого сервісного департаменту має вищу технічну освіту та значний практичний досвід роботи на промислових підприємствах.
+                            p Система підготовки персоналу передбачає ґрунтовне вивчення обладнання, яке пропонує компанія, а також обов’язкове проходження стажування безпосередньо на заводі-виробнику, що гарантує високий рівень експертизи та професійного сервісу.
+                .text_services_block 
+                    .grid.items-center
+                        h3.page_h3.animate.fade-left(data-delay="150") Індивідуальний підхід
+                        .description_info.animate.fade-right(data-delay="150") 
+                            p 
+                                b Наш підхід ґрунтується на індивідуальній роботі з кожним проєктом.
+                            p Ми не використовуємо шаблонних рішень, а підбираємо оптимальні варіанти, які відповідають реальним потребам клієнта, забезпечують стабільну роботу обладнання та довгостроковий результат.
+                .text_services_block 
+                    .grid.items-center
+                        h3.page_h3.animate.fade-left(data-delay="200") Виготовлення прес-форм
+                        .description_info.animate.fade-right(data-delay="200") 
+                            p 
+                                b Кожен інженер нашого сервісного департаменту має вищу технічну освіту та значний практичний досвід роботи на промислових підприємствах.
+                            p Система підготовки персоналу передбачає ґрунтовне вивчення обладнання, яке пропонує компанія, а також обов’язкове проходження стажування безпосередньо на заводі-виробнику, що гарантує високий рівень експертизи та професійного сервісу.
+                
+            .button_container.flex.flex-center.wrap_768.gap_20.animate.fade-up(data-delay="100")
+                a(href="#").cta.connect_cta.fill_cta Звʼязатися з нами
+                a(href="catalogue.html").cta.transparent_cta Термопластавтомати 
+        footer.dark_mode.footer
+            .wrapper_header.flex-between.header.items-center.wrap_768.gap_20
+                .logo 
+                    a(href="index.html")
+                        img(src="img/logo.svg", alt="") 
+                p.copy &copy 2025 Copyright by Gesplast.
+                p.privacy
+                    a(href="privacy.html") Політика конфіденційності
+        script(src="js/scripts.js")
+                
 
 

@@ -1,54 +1,54 @@
 doctype html
 html(lang="en")
-head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, user-scalable=yes, minimum-scale=1.0, maximom-scale=2.0, initial-scale=1.0")
-    title Tederic – інноваційні рішення для лиття пластмас під тиском
-    link(rel="stylesheet", href="css/styles.css")
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
-body 
-    .dark-bgc
-    include components/header
-    main.wrapper.news_container
-        h1.page_h1.animate.fade-up(data-delay="500") Новини компанії
-        section.news_cards.animate.fade-up(data-delay="500")
-            .grid.col_3.gap_20 
-                - for(let i = 0; i < 20; i++)
-                    figure.page_news 
-                        figcaption 
-                            a.mask_news(href="one_new_page.html") 
-                            picture 
-                                img(src="img/new_page.jpg", alt="")
-                            .flex-between.items-center.news_text 
-                                p новини
-                                p.flex.gap_10.items_center 
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" viewBox="0 0 16 18" fill="none">
-                                        <path d="M4.5 0.75V3.15" stroke="#ED6B27" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M10.9004 0.75V3.15" stroke="#ED6B27" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M0.900391 6.422H14.5004" stroke="#ED6B27" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M14.9 5.95001V12.75C14.9 15.15 13.7 16.75 10.9 16.75H4.5C1.7 16.75 0.5 15.15 0.5 12.75V5.95001C0.5 3.55001 1.7 1.95001 4.5 1.95001H10.9C13.7 1.95001 14.9 3.55001 14.9 5.95001Z" stroke="#ED6B27" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M10.6554 10.11H10.6626" stroke="#ED6B27" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M10.6554 12.51H10.6626" stroke="#ED6B27" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M7.69541 10.11H7.7026" stroke="#ED6B27" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M7.69541 12.51H7.7026" stroke="#ED6B27" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M4.73643 10.11H4.74361" stroke="#ED6B27" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M4.73643 12.51H4.74361" stroke="#ED6B27" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                    span.date 20.10.2025
-                            h2 Ми підписали ексклюзивну угоду з компанією Tederic
-            .button_container.flex.flex-center.wrap_768.gap_20.animate.fade-up(data-delay="300")
-                a(href="#")#show-more-btn.fill_cta.cta Завантажити ще
-    footer.dark_mode.footer
-        .wrapper_header.flex-between.header.items-center.wrap_768.gap_20
-            .logo 
-                a(href="index.html")
-                    img(src="img/logo.svg", alt="") 
-            p.copy &copy 2025 Copyright by Gesplast.
-            p.privacy
-                a(href="privacy.html") Політика конфіденційності
-    script(src="js/scripts.js")
-            
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, user-scalable=yes, minimum-scale=1.0, maximom-scale=2.0, initial-scale=1.0")
+        title Tederic – інноваційні рішення для лиття пластмас під тиском
+        link(rel="stylesheet", href="css/styles.css")
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    body 
+        .dark-bgc
+        include components/header
+        main.wrapper.news_container
+            h1.page_h1.animate.fade-up(data-delay="100") Новини компанії
+            section.news_cards.animate.fade-up(data-delay="100")
+                .grid.col_3.gap_20 
+                    - for(let i = 0; i < 20; i++)
+                        figure.page_news 
+                            figcaption 
+                                a.mask_news(href="one_new_page.html") 
+                                picture 
+                                    img(src="img/new_page.jpg", alt="")
+                                .flex-between.items-center.news_text 
+                                    p новини
+                                    p.flex.gap_10.items_center 
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" viewBox="0 0 16 18" fill="none">
+                                            <path d="M4.5 0.75V3.15" stroke="#ED6B27" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M10.9004 0.75V3.15" stroke="#ED6B27" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M0.900391 6.422H14.5004" stroke="#ED6B27" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M14.9 5.95001V12.75C14.9 15.15 13.7 16.75 10.9 16.75H4.5C1.7 16.75 0.5 15.15 0.5 12.75V5.95001C0.5 3.55001 1.7 1.95001 4.5 1.95001H10.9C13.7 1.95001 14.9 3.55001 14.9 5.95001Z" stroke="#ED6B27" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M10.6554 10.11H10.6626" stroke="#ED6B27" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M10.6554 12.51H10.6626" stroke="#ED6B27" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M7.69541 10.11H7.7026" stroke="#ED6B27" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M7.69541 12.51H7.7026" stroke="#ED6B27" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M4.73643 10.11H4.74361" stroke="#ED6B27" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M4.73643 12.51H4.74361" stroke="#ED6B27" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        span.date 20.10.2025
+                                h2 Ми підписали ексклюзивну угоду з компанією Tederic
+                .button_container.flex.flex-center.wrap_768.gap_20.animate.fade-up(data-delay="100")
+                    a(href="#")#show-more-btn.fill_cta.cta Завантажити ще
+        footer.dark_mode.footer
+            .wrapper_header.flex-between.header.items-center.wrap_768.gap_20
+                .logo 
+                    a(href="index.html")
+                        img(src="img/logo.svg", alt="") 
+                p.copy &copy 2025 Copyright by Gesplast.
+                p.privacy
+                    a(href="privacy.html") Політика конфіденційності
+        script(src="js/scripts.js")
+                

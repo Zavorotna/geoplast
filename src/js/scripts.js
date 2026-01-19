@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     //animation to section
-    if(document.querySelector(".animate")) {
+    if (document.querySelector(".animate")) {
         const animBlocks = document.querySelectorAll('.animate')
-    
+
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -16,8 +16,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }, {
             threshold: 0.5
         })
-    
-    
+
+
         animBlocks.forEach(block => {
             if (block.getBoundingClientRect().top < window.innerHeight) {
                 const delay = block.dataset.delay || 0
@@ -40,17 +40,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (entry.isIntersecting) {
                     const counter = entry.target,
                         updateCount = () => {
-                        const target = +counter.getAttribute('data-target'),
-                            current = +counter.innerText.replace(/\D/g, ''),
-                            increment = Math.ceil(target / speed)
+                            const target = +counter.getAttribute('data-target'),
+                                current = +counter.innerText.replace(/\D/g, ''),
+                                increment = Math.ceil(target / speed)
 
-                        if (current < target) {
-                            counter.innerText = current + increment > target ? target : current + increment
-                            setTimeout(updateCount, 50)
-                        } else {
-                            counter.innerText = target
+                            if (current < target) {
+                                counter.innerText = current + increment > target ? target : current + increment
+                                setTimeout(updateCount, 50)
+                            } else {
+                                counter.innerText = target
+                            }
                         }
-                    }
 
                     updateCount()
                     observer.unobserve(counter)
@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
         dark.addEventListener("click", cancelBurger)
     }
 
-     //autoload video after click on document
+    //autoload video after click on document
     if (document.querySelector('video')) {
         const videos = document.querySelectorAll('video')
         setTimeout(() => {
@@ -141,32 +141,32 @@ document.addEventListener("DOMContentLoaded", function () {
     })
 
     //get more news
-    if(document.querySelector('#show-more-btn')) {
+    if (document.querySelector('#show-more-btn')) {
         let newsPerPage = 6,
             currentIndex = 0
-    
+
         const allNews = Array.from(document.querySelectorAll('.news_cards figure.page_news'))
-    
+
         allNews.forEach((news, index) => {
             if (index >= newsPerPage) news.style.display = 'none'
         })
         currentIndex = newsPerPage
-    
+
         function showMoreNews() {
             const nextNews = allNews.slice(currentIndex, currentIndex + newsPerPage)
-            
+
             nextNews.forEach(news => {
                 news.style.display = 'block'
             })
-    
+
             currentIndex += newsPerPage
-    
+
             if (currentIndex >= allNews.length) {
                 document.querySelector('#show-more-btn').style.display = 'none'
             }
         }
-    
-        document.querySelector('#show-more-btn').addEventListener('click', function(e){
+
+        document.querySelector('#show-more-btn').addEventListener('click', function (e) {
             e.preventDefault()
             showMoreNews()
         })
@@ -179,30 +179,30 @@ document.addEventListener("DOMContentLoaded", function () {
         item.addEventListener('input', function () {
             let phoneNumber = item.value.trim()
             const mask = "+380"
-        
+
             if (!phoneNumber.startsWith(mask)) {
                 phoneNumber = mask + phoneNumber
             }
-        
+
             let cleanedValue = phoneNumber.replace(/[^\d+]/g, "")
-        
+
             if (cleanedValue.length > 13) {
                 cleanedValue = cleanedValue.slice(0, 13)
             }
-        
+
             const validInput = isValidPhoneNumber(cleanedValue)
-        
+
             if (validInput && cleanedValue.length === 13) {
                 item.style.borderColor = 'green'
                 item.style.color = '#121212'
 
-                errorTel.forEach(item => { 
+                errorTel.forEach(item => {
                     item.innerText = ""
                 })
             } else {
                 item.style.borderColor = '#B80101'
                 item.style.color = '#B80101'
-                errorTel.forEach(item => { 
+                errorTel.forEach(item => {
                     item.innerText = "Введіть коректний номер телефону"
                 })
             }
@@ -214,19 +214,19 @@ document.addEventListener("DOMContentLoaded", function () {
             phoneNumber = phoneInput.value.trim()
 
         if (!phoneNumber || !isValidPhoneNumber(phoneNumber) || phoneNumber.length < 13) {
-            errorTel.forEach(item => { 
-                item.innerText =  "невірний формат"
+            errorTel.forEach(item => {
+                item.innerText = "невірний формат"
             })
             return false
         }
-        
+
         const inputFields = form.querySelectorAll("input[name='userName']")
         for (const inputField of inputFields) {
             const userInput = inputField.value.trim()
             if (userInput.length < 3) {
                 return false
             }
-            if (userInput.length > 30){
+            if (userInput.length > 30) {
                 return false
             }
         }
@@ -295,7 +295,7 @@ document.addEventListener("DOMContentLoaded", function () {
             next = document.querySelector(".next"),
             prev = document.querySelector(".prev"),
             parentSliderContainer = document.querySelector(".slider_container")
-        
+
         let currentIndex = 0
         const totalSlides = slides.length
 
@@ -346,7 +346,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (currentIndex === 0) {
                 prev.classList.add('disabled')
-                prev.disabled = true 
+                prev.disabled = true
             } else {
                 prev.classList.remove('disabled')
                 prev.disabled = false
@@ -379,47 +379,51 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // let currentIndex = 0
         let startX = 0
-let currentX = 0
-let isDragging = false
-let sliderOffset = 0
-const swipeThreshold = 50
+        let currentX = 0
+        let isDragging = false
+        let sliderOffset = 0
+        const swipeThreshold = 50
 
-function onTouchStart(e) {
-    isDragging = true
-    startX = e.touches ? e.touches[0].clientX : e.clientX
-    sliderOffset = -currentIndex * parentSliderContainer.offsetWidth
-    sliderContainer.style.transition = 'none'
-}
+        function onTouchStart(e) {
+            isDragging = true
+            startX = e.touches ? e.touches[0].clientX : e.clientX
+            sliderOffset = -currentIndex * parentSliderContainer.offsetWidth
+            sliderContainer.style.transition = 'none'
+        }
 
-function onTouchMove(e) {
-    if (!isDragging) return
-    currentX = e.touches ? e.touches[0].clientX : e.clientX
-    const delta = currentX - startX
-    sliderContainer.style.transform = `translateX(${sliderOffset + delta}px)`
-    e.preventDefault() // блокуємо скрол
-}
+        function onTouchMove(e) {
+            if (!isDragging) return
+            currentX = e.touches ? e.touches[0].clientX : e.clientX
+            const delta = currentX - startX
+            sliderContainer.style.transform = `translateX(${sliderOffset + delta}px)`
+            e.preventDefault() // блокуємо скрол
+        }
 
-function onTouchEnd() {
-    if (!isDragging) return
-    isDragging = false
-    const delta = currentX - startX
-    sliderContainer.style.transition = 'transform 0.3s ease'
+        function onTouchEnd() {
+            if (!isDragging) return
+            isDragging = false
+            const delta = currentX - startX
+            sliderContainer.style.transition = 'transform 0.3s ease'
 
-    if (Math.abs(delta) > swipeThreshold) {
-        if (delta < 0 && currentIndex < totalSlides - 1) currentIndex++
-        if (delta > 0 && currentIndex > 0) currentIndex--
-    }
-    updateSlider()
-    startX = 0
-    currentX = 0
-    sliderOffset = 0
-}
+            if (Math.abs(delta) > swipeThreshold) {
+                if (delta < 0 && currentIndex < totalSlides - 1) currentIndex++
+                if (delta > 0 && currentIndex > 0) currentIndex--
+            }
+            updateSlider()
+            startX = 0
+            currentX = 0
+            sliderOffset = 0
+        }
 
-// Події
-sliderContainer.addEventListener('touchstart', onTouchStart, { passive: true })
-sliderContainer.addEventListener('touchmove', onTouchMove, { passive: false })
-sliderContainer.addEventListener('touchend', onTouchEnd)
-sliderContainer.addEventListener('touchcancel', onTouchEnd)
+        // Події
+        sliderContainer.addEventListener('touchstart', onTouchStart, {
+            passive: true
+        })
+        sliderContainer.addEventListener('touchmove', onTouchMove, {
+            passive: false
+        })
+        sliderContainer.addEventListener('touchend', onTouchEnd)
+        sliderContainer.addEventListener('touchcancel', onTouchEnd)
 
         let resizeTimeout
         window.addEventListener('resize', () => {
@@ -431,4 +435,18 @@ sliderContainer.addEventListener('touchcancel', onTouchEnd)
         updateSlider()
     }
 
+    const header = document.querySelector(".fixed_header"),
+        hero = document.querySelector(".main_section");
+
+    if (!header || !hero || !document.body.classList.contains("home")) return;
+
+    const triggerHeight = hero.offsetHeight;
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > triggerHeight) {
+        header.classList.add("header_filled");
+        } else {
+        header.classList.remove("header_filled");
+        }
+    });
 })
