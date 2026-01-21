@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     //animation to section
     if (document.querySelector(".animate")) {
         const animBlocks = document.querySelectorAll('.animate');
-        let ticking = false; // throttle через requestAnimationFrame
+        let ticking = false
 
         const observer = new IntersectionObserver((entries, observer) => {
             if (!ticking) {
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             setTimeout(() => {
                                 entry.target.classList.add('show');
                             }, delay);
-                            observer.unobserve(entry.target); // вимикаємо спостереження
+                            observer.unobserve(entry.target)
                         }
                     });
                     ticking = false;
