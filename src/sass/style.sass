@@ -12,6 +12,8 @@ html
         font-size: 0.95px
     +media(1920)
         font-size: 1px
+    +media(2200)
+        font-size: 1.5px
 
 body
     color: #121212
@@ -22,7 +24,7 @@ body
         font-size: 24rem
 
 main
-    padding-top: 90rem
+    padding-top: 84px
     overflow-x: hidden
 
 h1
@@ -102,7 +104,9 @@ b
     text-align: center
 
 .pt_100
-    padding-top: 100rem
+    padding-top: 50rem
+    +media(1440)
+        padding-top: 100rem
     
 .pt_60
     padding-top: 60rem
@@ -116,7 +120,7 @@ b
         gap: 20rem
 
 .gap_30
-    gap: 20rem
+    gap: 10rem
     +media(768)
         gap: 30rem
 .gap_100
@@ -159,7 +163,7 @@ b
     top: 0
     left: 0
     width: 100%
-    padding: 20px 0
+    padding: 20rem 0
     z-index: 4
     transition: background-color 0.4s ease, backdrop-filter 0.4s ease
 
@@ -169,7 +173,9 @@ b
 .home 
     main
         padding: 0
-
+.header
+    .cta
+        min-width: 200rem
 .home 
     .header_filled 
         background-color: #0F283D
@@ -284,7 +290,7 @@ a.cancel
     position: relative
     max-width: 1156rem
     min-height: 90vh 
-    padding: 50rem 0
+    padding: 84px 0 50rem
     color: #fff
     z-index: 2
     h1
@@ -359,7 +365,9 @@ a.cancel
         background: #ED6B27
         border-radius: 3px
 .need_block
-    padding-bottom: 100rem 
+    padding-bottom: 50rem 
+    +media(1440)
+        padding-bottom: 100rem 
 
 .statistic_container
     padding: 40rem 0
@@ -565,7 +573,9 @@ a.cancel
 //page
 
 .info_page 
-    padding-bottom: 100rem
+    padding-bottom: 50rem
+    +media(1440)
+        padding-bottom: 100rem
     .transparent_cta
         color: #121212
         &:hover
@@ -598,7 +608,9 @@ a.cancel
         font-size: 48rem
 
 .advantages_container
-    padding: 100rem 0
+    padding: 50rem 0
+    +media(1440)
+        padding: 70rem 0
 
 .col_4
     grid-template-columns: repeat(2, 1fr)
@@ -629,11 +641,13 @@ a.cancel
         padding-bottom: 60rem
 
 .text_block
-    padding-bottom: 70rem
+    padding-bottom: 50rem
+    +media(1440)
+        padding-bottom: 70rem
     .grid
-        gap: 50rem
+        gap: 20rem
         +media(1440)
-            gap: 150rem 
+            gap: 100rem 
     h3
         max-width: 570rem
         padding-bottom: 20rem
@@ -681,7 +695,7 @@ a.cancel
     overflow: hidden
     a 
         padding: 15px 20px
-        color: #BDBDBD
+        color: #0f283d
         text-align: center
         font-size: 16rem
         font-weight: 500
@@ -714,10 +728,13 @@ a.cancel
         +media(768)
             font-size: 26rem
 
-.services_main_text
-    padding: 50rem 0
+.services_main_text,
+.info_page
     h1
         padding-bottom: 58rem
+
+.services_main_text
+    padding: 0 0 50rem
     p
         margin-bottom: 15rem
 
@@ -750,7 +767,9 @@ a.cancel
     h1
         padding: 60rem 0 40rem
     section
-        padding: 0 0 100rem
+        padding: 0 0 50rem
+        +media(1440)
+            padding: 0 0 100rem
 
 .page_news
     figcaption
@@ -787,8 +806,10 @@ main.new_one_container
     h1
         padding: 10rem 0 20rem
         color: #0F283D
-        font-size: 48rem
+        font-size: 28rem
         font-weight: 500
+        +media(1440)
+            font-size: 48rem
     picture
         display: inline-block
         width: 100%
@@ -992,7 +1013,8 @@ main.new_one_container
 .info_product_container
     padding: 50rem 0
     background: #F6F6F6
-
+.hidden
+    overflow: hidden 
 .info-item
     border-top: 1px solid #121212
 
@@ -1065,7 +1087,9 @@ main.new_one_container
         max-width: 70%
         margin: 0 auto
 .slider_section
-    padding: 50rem 0 100rem
+    padding: 30rem 0 50rem
+    +media(1440)
+        padding: 50rem 0 100rem
     .wrapper
         width: 80%
         +media(1440)

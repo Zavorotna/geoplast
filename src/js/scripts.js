@@ -1,34 +1,32 @@
 document.addEventListener("DOMContentLoaded", function () {
     //animation to section
     if (document.querySelector(".animate")) {
-        const animBlocks = document.querySelectorAll('.animate')
+        const animBlocks = document.querySelectorAll('.animate');
+        let ticking = false; // throttle через requestAnimationFrame
 
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const delay = entry.target.dataset.delay || 0
-                    setTimeout(() => {
-                        entry.target.classList.add('show')
-                    }, delay)
-                    observer.unobserve(entry.target)
-                }
-            })
-        }, {
-            threshold: 0.5
-        })
-
-
-        animBlocks.forEach(block => {
-            if (block.getBoundingClientRect().top < window.innerHeight) {
-                const delay = block.dataset.delay || 0
-                setTimeout(() => {
-                    block.classList.add('show')
-                }, delay)
-            } else {
-                observer.observe(block)
+        const observer = new IntersectionObserver((entries, observer) => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const delay = parseInt(entry.target.dataset.delay) || 0;
+                            setTimeout(() => {
+                                entry.target.classList.add('show');
+                            }, delay);
+                            observer.unobserve(entry.target); // вимикаємо спостереження
+                        }
+                    });
+                    ticking = false;
+                });
+                ticking = true;
             }
-        })
+        }, {
+            threshold: 0.3
+        });
+
+        animBlocks.forEach(block => observer.observe(block));
     }
+
 
     if (document.querySelector(".stats")) {
 
@@ -114,7 +112,9 @@ document.addEventListener("DOMContentLoaded", function () {
         cancelPopup = document.querySelector(".cancel_popup")
 
     connectCta.forEach(cta => {
-        cta.addEventListener("click", () => {
+        cta.addEventListener("click", (e) => {
+            e.preventDefault()
+            document.querySelector('body').style.overflow = 'hidden'
             popupConnect.style.display = "block"
             dark.style.display = "block"
         })
@@ -122,9 +122,11 @@ document.addEventListener("DOMContentLoaded", function () {
     cancelPopup.addEventListener("click", () => {
         popupConnect.style.display = "none"
         dark.style.display = "none"
+        document.querySelector('body').style.overflow = 'visible'
     })
     dark.addEventListener("click", () => {
         popupConnect.style.display = "none"
+        document.querySelector('body').style.overflow = 'visible'
         dark.style.display = "none"
     })
 

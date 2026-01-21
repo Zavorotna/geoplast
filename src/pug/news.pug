@@ -13,12 +13,12 @@ html(lang="en")
     body 
         .dark-bgc
         include components/header
-        main.wrapper.news_container
+        main.wrapper.news_container.hidden 
             h1.page_h1.animate.fade-up(data-delay="100") Новини компанії
-            section.news_cards.animate.fade-up(data-delay="100")
+            section.news_cards
                 .grid.col_3.gap_20 
                     - for(let i = 0; i < 20; i++)
-                        figure.page_news 
+                        figure.page_news.animate.fade-up(data-delay="100") 
                             figcaption 
                                 a.mask_news(href="one_new_page.html") 
                                 picture 

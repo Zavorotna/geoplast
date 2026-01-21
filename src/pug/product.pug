@@ -10,10 +10,10 @@ html(lang="en")
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
-    body 
+    body
         .dark-bgc
         include components/header
-        main.product_container_page
+        main.product_container_page.hidden
             section.product_main_section
                 .main_product_block.wrapper.animate.fade-up(data-delay="100")
                     p Коліно-важільні термопластавтомати
@@ -45,7 +45,7 @@ html(lang="en")
                         </svg>
                         |  T з колінно-важелевим вузлом змикання: 
                         span.tiny_text елегантність та продуктивність у кожній деталі.
-            section.table_container.animate.fade-up(data-delay="100") 
+            section.table_container 
                 .wrapper 
                     h2.page_h2 Модельний ряд
                     .table_block
