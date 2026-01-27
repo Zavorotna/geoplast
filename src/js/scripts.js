@@ -119,7 +119,8 @@ document.addEventListener("DOMContentLoaded", function () {
             dark.style.display = "block"
         })
     })
-    cancelPopup.addEventListener("click", () => {
+    cancelPopup.addEventListener("click", (e) => {
+        e.preventDefault()
         popupConnect.style.display = "none"
         dark.style.display = "none"
         document.querySelector('body').style.overflow = 'visible'
@@ -131,7 +132,8 @@ document.addEventListener("DOMContentLoaded", function () {
     })
 
     buttons.forEach(btn => {
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault()
             buttons.forEach(b => b.classList.remove('active'))
             btn.classList.add('active')
 

@@ -671,9 +671,9 @@ a.cancel
     top: 50%
     left: 50%
     width: 90vw
-    max-height: 90vh 
+    max-height: 95vh 
     max-width: 650px
-    padding: 50rem 20rem
+    padding: 40rem 20rem 20rem
     transform: translate(-50%, -50%)
     background-color: #fff
     border-radius: 3px
@@ -685,8 +685,11 @@ a.cancel
 
 .cancel_popup
     position: absolute
-    top: 20rem
-    right: 20rem
+    top: 10rem
+    right: 10rem
+    +media(768)
+        top: 20rem
+        right: 20rem
 
 .btn_popup_col
     grid-template-columns: repeat(2, 1fr)
@@ -878,7 +881,8 @@ main.new_one_container
             padding-top: 20rem
     label
         display: block
-        padding-bottom: 5rem
+        +media(768)
+            padding-bottom: 5rem
         span
             color: #ED6B27
     input, textarea
